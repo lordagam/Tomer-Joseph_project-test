@@ -24,5 +24,5 @@ jobs:
             password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: docker push
         run: docker push lordagam/project_jo_tomer:frontend
-        run: docker push lordagam/project_jo_tomer:backend
-        run: docker push lordagam/project_jo_tomer:mariadb
+        #run: docker push lordagam/project_jo_tomer:backend
+        #run: docker push lordagam/project_jo_tomer:mariadb
