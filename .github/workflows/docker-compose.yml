@@ -1,12 +1,16 @@
-steps:
-  # need checkout before using docker-compose-action
-  - uses: actions/checkout@v3
-  - uses: adambirds/docker-compose-action@v1.3.0
-    with:
-      compose-file: "./docker/docker-compose.yml"
-      down-flags: "--volumes"
-      services: |
-        helloworld2
-        helloworld3
-      test-container: helloworld
-      test-command: "npm test"
+on: [push]
+
+jobs:
+  client_hello_world:
+    runs-on: ubuntu-latest
+    name: Tests a client by running a docker compose
+    container: docker
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v3
+      - name: "Builds the docker composed image"
+        id: build
+        run: docker compose build
+      - name: "Brings up the docker compose and runs the tests"
+        id: run-test
+        run: docker compose up --abort-on-container-exit --exit-code-from client
