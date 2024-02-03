@@ -8,7 +8,15 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
       - name: Test
-        run: curl http://localhost:3000 
+        #run: curl http://localhost:3000 
+        run: |
+          apt-get update; apt-get install -y curl
+      - name: Run curl
+        run: |
+          curl http://localhost:3000
+   
+   
+   
    #   - name: run & test Container
    #     run: docker run -itd --name war-tomer-and-jo -p 80:8080 my-image-name:latest
 
