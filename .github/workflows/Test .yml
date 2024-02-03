@@ -3,16 +3,11 @@ on: push
 jobs:
  Build-Test-Push:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Build the stack
-        run: docker-compose up --build -d      
-    steps2:
-      - name: Test
+    needs: Build the stack   
+      - name: test
         run: |
           sudo apt-get update; sudo apt-get install -y curl
-     
-      
+
       - name: Run curl
         run: |
           curl http://localhost:3000
