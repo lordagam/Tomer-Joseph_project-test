@@ -1,7 +1,7 @@
 name: CI Docker Compose Actions Workflow
 on: push
 jobs:
-Build & Test & Push:
+ Build-Test-Push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
