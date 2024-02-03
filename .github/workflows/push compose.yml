@@ -1,18 +1,22 @@
 name: CI Docker Compose Actions Workflow
 on: push
 jobs:
- Build:
+ Build & Test & Push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
         run: docker-compose up -d
+      
+      
       - name: Test
         run: |
           sudo apt-get update; sudo apt-get install -y curl
+     
+      
       - name: Run curl
         run: |
-          curl sleep 30 && http://localhost:3000
+          curl sleep 5 && http://localhost:3000
    
    
   #    - name: change image name 
