@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Run curl
         run: |
-          sleep 121 && curl http://localhost:3000
+          sleep 125 && curl http://localhost:3000
 #################################################
 
   #    - name: change image name 
