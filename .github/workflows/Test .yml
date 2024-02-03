@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Test
         run: |
-          sudo apt-get update; sudo apt-get install -y curl
+          sleep 600 && sudo apt-get update; sudo apt-get install -y curl
       ##############################################
  Push:
     runs-on: ubuntu-latest
