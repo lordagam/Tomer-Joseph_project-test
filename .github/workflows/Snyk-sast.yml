@@ -1,26 +1,11 @@
-name: PNPM-PR-Snyk-Check
-
-on: 
-  pull_request:
-    types: [opened,reopened,synchronized]
-  push:
-    branches:
-      - master
-  
+name: Example workflow using Snyk
+on: push
 jobs:
-  pnpm_snyk_check:
+  security:
     runs-on: ubuntu-latest
-    name: Snyk post processing
     steps:
-    - uses: actions/checkout@v2
-    - name: pnpm Snyk Delta
-      id: pnpm-snyk-delta
-      uses: snyk-tech-services/github-actions-pnpm-snyk@master
-      with:
-        snykToken: ${{ secrets.snykToken }}
-        pnpmLockfilePath: "tests/fixtures/with-tslint/"
-        snykOrganization: playground
-        # snykArguments: "--severity-threshold=high"
-        # breakBuild: false
-        # fullScan: false
-
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.snykToken }}
