@@ -19,6 +19,7 @@ jobs:
 jobs:
  Push:
     runs-on: ubuntu-latest
+     steps:
       - name: Run curl
         run: |
           curl http://localhost:3000
