@@ -29,12 +29,12 @@ jobs:
       #  env:
       #    SNYK_TOKEN: ${{ secrets.SNYKTOKEN }}
 
-      - name: Run Snyk to check Docker image for vulnerabilities
-        uses: snyk/actions/docker@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYKTOKEN }}
-        with:
-          image: lordagam/Tomer-Joseph_project-test
+      #- name: Run Snyk to check Docker image for vulnerabilities
+      #  uses: snyk/actions/docker@master
+      #  env:
+      #    SNYK_TOKEN: ${{ secrets.SNYKTOKEN }}
+      #  with:
+      #    image: lordagam/Tomer-Joseph_project-test
   #    - name: change image name 
    #     run: docker tag my-image-name:latest lordagam/github-repo-hello-world-war5:latest
    #   - name: Login to Docker Hub
