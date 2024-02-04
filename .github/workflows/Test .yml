@@ -1,46 +1,41 @@
 name: CI Docker Compose Actions Workflow
 on: push
 jobs:
-  Build:
+ Build:
     runs-on: self-hosted
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the stack
-      run: docker-compose up --build -d
-
-  Test:
+      - uses: actions/checkout@v2
+      - name: Build the stack
+        run: docker-compose up --build -d
+      
+ Test:
+    needs: Build
     runs-on: self-hosted
-    #needs: Build
     steps:
-    - name: Test
-      run: |
-          sleep 181 && sudo apt-get update; sudo apt-get install -y curl
-    - name: Run curl
-      run: |
+      - name: Test
+        run: |
+          sudo apt-get update; sudo apt-get install -y curl     
+      - name: Run curl
+        run: |
           curl http://localhost:3000
 
-  Snyk-sec:
-    runs-on: self-hosted
-    #needs: Build
-    steps:
-    - name: Snyk example
-    - uses: actions/checkout@master
-    - uses: snyk/actions/setup@master
-    - uses: actions/setup-go@v1
-      with:
-          go-version: '1.13'
-    - name: Snyk monitor
-      run: snyk test
-      env:
-        SNYK_TOKEN: ${{ secrets.SNYKTOKEN }}
+      #- name: Snyk example
+      #- uses: actions/checkout@master
+      #- uses: snyk/actions/setup@master
+      #- uses: actions/setup-go@v1
+      #  with:
+      #    go-version: '1.13'
+      #- name: Snyk monitor
+      #  run: snyk test
+      #  env:
+      #    SNYK_TOKEN: ${{ secrets.SNYKTOKEN }}
 
-
-
-
-
-
-
-          
+ #     - name: Run Snyk to check Docker image for vulnerabilities
+ #       uses: snyk/actions/docker@master
+ #       env:
+ #         SNYK_TOKEN: ${{ secrets.SNYKTOKEN }}
+ #       with:
+ #         image: lordagam/Tomer-Joseph_project-test
   #    - name: change image name 
    #     run: docker tag my-image-name:latest lordagam/github-repo-hello-world-war5:latest
    #   - name: Login to Docker Hub
