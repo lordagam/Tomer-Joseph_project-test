@@ -13,14 +13,10 @@ jobs:
     steps:
       - name: Test
         run: |
-          sleep 121 && sudo apt-get update; sudo apt-get install -y curl
-      ##############################################
- Push:
-    runs-on: ubuntu-latest
-    steps:
+          sleep 181 && sudo apt-get update; sudo apt-get install -y curl
       - name: Run curl
         run: |
-          sleep 180 && curl http://localhost:3000
+          curl http://localhost:3000
 #################################################
 
   #    - name: change image name 
