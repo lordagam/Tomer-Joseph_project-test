@@ -4,35 +4,35 @@ jobs:
   Build:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v2
-      - name: Build the stack
-        run: docker-compose up --build -d
+    - uses: actions/checkout@v2
+    - name: Build the stack
+      run: docker-compose up --build -d
 
   Test:
     runs-on: self-hosted
     #needs: Build
     steps:
-      - name: Test
-        run: |
+    - name: Test
+      run: |
           sleep 181 && sudo apt-get update; sudo apt-get install -y curl
-      - name: Run curl
-        run: |
+    - name: Run curl
+      run: |
           curl http://localhost:3000
 
   Snyk-sec:
     runs-on: self-hosted
     #needs: Build
     steps:
-      - name: Snyk example
-      - uses: actions/checkout@master
-      - uses: snyk/actions/setup@master
-      - uses: actions/setup-go@v1
-        with:
+    - name: Snyk example
+    - uses: actions/checkout@master
+    - uses: snyk/actions/setup@master
+    - uses: actions/setup-go@v1
+      with:
           go-version: '1.13'
-      - name: Snyk monitor
-        run: snyk test
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYKTOKEN }}
+    - name: Snyk monitor
+      run: snyk test
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYKTOKEN }}
 
 
 
