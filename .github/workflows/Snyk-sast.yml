@@ -2,7 +2,7 @@ name: Snyk example
 on: push
 jobs:
   security:
-    runs-on: Self-hosting
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@master
       - uses: snyk/actions/setup@master
