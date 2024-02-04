@@ -1,20 +1,16 @@
 name: CI Docker Compose Actions Workflow
 on: push
 jobs:
- 
- 
- 
   Build:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
         run: docker-compose up --build -d
-##########################################
+
   Test:
     runs-on: self-hosted
-    
-    needs: Build
+    #needs: Build
     steps:
       - name: Test
         run: |
@@ -22,10 +18,10 @@ jobs:
       - name: Run curl
         run: |
           curl http://localhost:3000
-#################################################
+
   Snyk-sec:
     runs-on: self-hosted
-    needs: Build
+    #needs: Build
     steps:
       - name: Snyk example
       - uses: actions/checkout@master
