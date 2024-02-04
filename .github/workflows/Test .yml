@@ -12,10 +12,7 @@ jobs:
     needs: Build
     runs-on: self-hosted
     steps:
-      - name: Test
-        run: |
-          sudo yum update; sudo yum install -y curl     
-      - name: Run curl
+      - name: Test-curl
         run: |
           curl http://localhost:3000
 
