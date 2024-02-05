@@ -73,17 +73,17 @@ jobs:
         run: cd /~ && sudo mkdir jo-Test
 
 
-# Notification-to-mail:
-#    needs: CD-Terraform 
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: 'Notify users on file change'
-#      - uses: danthe1st/email-filechange-notif-action@v1
-#        with: 
+ Notification-to-mail:
+    needs: CD-Terraform 
+    runs-on: ubuntu-latest
+    steps:
+   #   - name: 'Notify users on file change'
+      - uses: danthe1st/email-filechange-notif-action@v1
+        with: 
 #          # Address to send E-Mails from
-#         senderEmail: ${{ secrets.SENDER_EMAIL }}
+         senderEmail: ${{ secrets.SENDER_EMAIL }}
 #          # optional, The subject of the E-Mails to send
-#         subjectLine: 'GitHub file change notification'
+         subjectLine: 'GitHub Test Notification'
 #          # A file in the repository or HTTP address that contains file patterns with E-Mail addresses that should be notified on file changes
 #         mailingList: ${{ secrets.MAILING_LIST }}
 #          # The SMTP server used to send E-Mails
