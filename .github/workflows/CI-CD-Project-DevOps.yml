@@ -100,7 +100,8 @@ jobs:
 
 
  slack-Notification:
-   name: Slack Notification Demo
+   name: Slack Notification 
+   needs: CD-Terraform 
    runs-on: ubuntu-latest
    steps:
      - uses: actions/checkout@master
