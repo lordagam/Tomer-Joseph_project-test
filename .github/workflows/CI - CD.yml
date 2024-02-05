@@ -1,7 +1,7 @@
 name: CI Docker Compose Actions Workflow
 on: push
 jobs:
- Build-Test-Push:
+ CI-Build-Test-Push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,10 +24,15 @@ jobs:
       #- uses: actions/setup-go@v1
       #  with:
       #    go-version: '1.13'
-      #- name: Snyk monitor
-      #  run: snyk test
-      #  env:
-      #    SNYK_TOKEN: ${{ secrets.SNYKTOKEN }}
+     
+ Snyk-security:
+    needs: Build-Test-Push
+    runs-on: ubuntu-latest
+    steps:          
+      - name: Snyk monitor
+        run: snyk test
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYKTOKEN }}
 
       #- name: Run Snyk to check Docker image for vulnerabilities
       #  uses: snyk/actions/docker@master
