@@ -26,7 +26,7 @@ jobs:
       #    go-version: '1.13'
      
  Snyk-security:
-    needs: Build-Test-Push
+    #needs: Build-Test-Push
     runs-on: ubuntu-latest
     steps:          
       - name: Snyk monitor
