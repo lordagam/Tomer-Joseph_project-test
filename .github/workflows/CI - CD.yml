@@ -29,10 +29,18 @@ jobs:
     needs: CI-Build-Test-Push
     runs-on: ubuntu-latest
     steps:          
-      - name: Snyk monitor
-        run: snyk test
-        env:
+      - name: Snyk Infrastructure as Code scan
+        id: snyk-iac-scan
+        uses: Gershon-A/snyk-iac-code-security-checks@v1.0.1
+        continue-on-error: true
+        with:
           SNYK_TOKEN: ${{ secrets.SNYKTOKEN }}
+          SEVERITY_THRESHOLD: "critical"
+          FILE: "example-*"
+          update_pr_with_scan_results: true
+
+
+
 
       #- name: Run Snyk to check Docker image for vulnerabilities
       #  uses: snyk/actions/docker@master
