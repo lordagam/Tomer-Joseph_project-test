@@ -51,10 +51,9 @@ jobs:
         #run: docker push lordagam/project_jo_tomer:mariadb
 
 
-name: CD Terraform
-on: push
-jobs:
- Build-Test-Push:
+
+
+ CD Terraform:
     runs-on: self-hosted
     steps:          
       - name: Build dir
