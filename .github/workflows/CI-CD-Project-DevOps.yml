@@ -1,4 +1,4 @@
-name: CI-CD-Project-DevOps
+name: Project-DevOps
 on: push
 jobs:
  CI-Build-Test-Push:
