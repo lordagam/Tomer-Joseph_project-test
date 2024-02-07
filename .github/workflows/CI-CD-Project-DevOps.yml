@@ -23,9 +23,7 @@ jobs:
             password: ${{ secrets.DOCKERHUB_TOKEN }}
       
       - name: docker push
-        run: docker push lordagam/project-test:db
-        run: docker push lordagam/project-test:backend
-        run: docker push lordagam/project-test:frontend
+        run: docker push lordagam/project-test:db && docker push lordagam/project-test:backend && docker push lordagam/project-test:frontend
 
       #- name: Run curl
        # run: |
