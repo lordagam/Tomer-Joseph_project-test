@@ -91,19 +91,15 @@ jobs:
     - name: Clone  
       run: git clone https://github.com/lordagam/terraform-aws-eks-work-jo.git && cd terraform-aws-eks-work-jo/
 
-    - name: ls  
-      run: ls
-
-
     # Checkout the repository to the GitHub Actions runner
    # - name: go to dir-file 
    #   run: cd ~/terraform-aws-eks-work-jo
     
-    # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
-    #- name: Setup Terraform
-    #  uses: hashicorp/setup-terraform@v1
-    #  with:
-    #    cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
+      with:
+        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: terraform init
