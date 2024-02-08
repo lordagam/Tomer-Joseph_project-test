@@ -95,6 +95,18 @@ jobs:
    # - name: go to dir-file 
    #   run: cd ~/terraform-aws-eks-work-jo
     
+    - name: Run Terraform
+      uses: sarathkrish/invoke-terraform-run-api@v1.0   
+      with:  
+        workSpaceName: Project_DevOps-CD
+        #organizationName: {{env.organization}}  
+        terraformToken: ${{ secrets.TF_API_TOKEN }}
+        terraformHost: 'app.terraform.io'
+        isDestroy: false
+        message: 'GitHub Actions'
+      
+     
+     
      # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
@@ -112,6 +124,7 @@ jobs:
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan
+     
 
       # On push to "main", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
