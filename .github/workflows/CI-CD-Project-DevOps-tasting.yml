@@ -95,18 +95,11 @@ jobs:
    # - name: go to dir-file 
    #   run: cd ~/terraform-aws-eks-work-jo
    
-    - name: terraform login 
-      run: terraform login
-       with:
-         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-
-
-    
     - name: Run Terraform
       uses: sarathkrish/invoke-terraform-run-api@v1.0   
       with:  
         workSpaceName: Project_DevOps-CD
-        organizationName: ${{env.organization}}  
+        organizationName: ${{ env.organization }}  
         terraformToken: ${{ secrets.TF_API_TOKEN }}
         terraformHost: 'app.terraform.io'
         isDestroy: false
