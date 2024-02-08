@@ -89,7 +89,8 @@ jobs:
     steps:
     # login aws configure
     - name: aws configure  
-    - uses: Sumanshu-Nankana/setup-aws-cli@v1
+   # - uses: Sumanshu-Nankana/setup-aws-cli@v1
+      run: aws configure 
       with:
         #region: 'eu-west-3'
         access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
