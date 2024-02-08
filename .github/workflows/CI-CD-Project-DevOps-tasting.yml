@@ -89,7 +89,7 @@ jobs:
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Clone  
-      run: git clone https://github.com/lordagam/terraform-aws-eks-work-jo.git
+      run: git clone https://github.com/lordagam/terraform-aws-eks-work-jo.git && cd ~/terraform-aws-eks-work-jo
 
     - name: ls  
       run: ls
@@ -97,7 +97,7 @@ jobs:
 
     # Checkout the repository to the GitHub Actions runner
     - name: go to dir-file 
-      run: cd ~/terraform-aws-eks-work-jo/
+      run: cd ~/terraform-aws-eks-work-jo
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     #- name: Setup Terraform
     #  uses: hashicorp/setup-terraform@v1
