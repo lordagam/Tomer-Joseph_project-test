@@ -94,12 +94,17 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
    # - name: go to dir-file 
    #   run: cd ~/terraform-aws-eks-work-jo
+   
+    - name: terraform login 
+      run: terraform login
+
+
     
     - name: Run Terraform
       uses: sarathkrish/invoke-terraform-run-api@v1.0   
       with:  
         workSpaceName: Project_DevOps-CD
-        #organizationName: {{env.organization}}  
+        organizationName: ${{env.organization}}  
         terraformToken: ${{ secrets.TF_API_TOKEN }}
         terraformHost: 'app.terraform.io'
         isDestroy: false
