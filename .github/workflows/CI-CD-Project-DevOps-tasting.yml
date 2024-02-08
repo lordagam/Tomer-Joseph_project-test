@@ -87,6 +87,19 @@ jobs:
         shell: bash
 
     steps:
+    # login aws configure
+    - name: aws configure  
+    - uses: Sumanshu-Nankana/setup-aws-cli@v1
+      with:
+        region: 'eu-west-1'
+        access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-cli-version: 1.32.33
+        output-format: json
+      # Run AWS Commands
+    - run: aws s3api list-buckets
+
+    
     # Checkout the repository to the GitHub Actions runner
     - name: Clone  
       run: git clone https://github.com/lordagam/terraform-aws-eks-work-jo.git && cd terraform-aws-eks-work-jo/
@@ -106,6 +119,7 @@ jobs:
         isDestroy: false
         message: 'GitHub Actions'
       
+
      
      
      # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
