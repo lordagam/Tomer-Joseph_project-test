@@ -1,8 +1,8 @@
-#name: Project-DevOps
-#on: push
-#jobs:
-# CI-Build-Test-Push:
-#    runs-on: ubuntu-latest
+name: Project-DevOps
+on: push
+jobs:
+ CI-Build-Test-Push:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
