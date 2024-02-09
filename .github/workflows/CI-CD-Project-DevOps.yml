@@ -2,7 +2,7 @@ name: Project-DevOps
 on: push
 jobs:
  CI-Build-Test-Push:
-    needs: CD-Terraform
+    #needs: CD-Terraform
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -122,7 +122,7 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
+      #if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       run: terraform plan
 
       # On push to "main", build or change infrastructure according to Terraform configuration files
