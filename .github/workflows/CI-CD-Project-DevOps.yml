@@ -120,6 +120,9 @@ jobs:
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: terraform validate
       run: terraform validate
+   
+    - name: show the file of dir(test)
+      run: ls -hla 
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
