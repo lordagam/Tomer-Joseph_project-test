@@ -88,18 +88,15 @@ jobs:
 
     steps:
     - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v4
+    - uses: mcblair/configure-aws-profile-action@v0.1.1
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: eu-west-3
-        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-        #role-external-id: ${{ secrets.AWS_ROLE_EXTERNAL_ID }}
-        role-duration-seconds: 1200
-        role-session-name: Terraform-jo-role
+        role-arn: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+        profile-name: production
+        region: us-east-2
+
     
-    - name: Display AWS Config
-      run: aws configure list
+    #- name: Display AWS Config
+    #  run: aws configure list
 
   
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
