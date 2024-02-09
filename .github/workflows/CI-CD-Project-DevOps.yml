@@ -102,9 +102,11 @@ jobs:
         role-session-name: Terraform-jo-role
 
     - name: Checkout Repository
-      run: git clone https://github.com/lordagam/terraform-aws-eks-work-jo.git && cd terraform-aws-eks-work-jo && ls
+      run: git clone https://github.com/lordagam/terraform-aws-eks-work-jo.git && cd terraform-aws-eks-work-jo 
 
-  
+    - name: show the file of dir
+      run: ls 
+    
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
    # - name: Setup Terraform
    #   uses: hashicorp/setup-terraform@v1
