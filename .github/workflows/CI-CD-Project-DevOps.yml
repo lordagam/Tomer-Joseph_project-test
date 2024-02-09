@@ -101,6 +101,8 @@ jobs:
         role-duration-seconds: 1200
         role-session-name: Terraform-jo-role
 
+    - name: Checkout Repository
+      run: git clone https://github.com/lordagam/terraform-aws-eks-work-jo.git && cd terraform-aws-eks-work-jo
     
     #- name: Display AWS Config
     #  run: aws configure list
