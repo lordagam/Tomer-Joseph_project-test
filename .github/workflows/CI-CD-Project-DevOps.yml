@@ -108,7 +108,7 @@ jobs:
       run: cd terraform-aws-eks-work-jo
       
     - name: show the file of dir
-      run: ls -hla 
+      run: ls -alh 
     
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
    # - name: Setup Terraform
@@ -125,11 +125,11 @@ jobs:
       run: terraform validate
    
     - name: show the file of dir(test)
-      run: ls -hla 
+      run: ls -alh 
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
+      #if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       run: terraform plan
         
       
