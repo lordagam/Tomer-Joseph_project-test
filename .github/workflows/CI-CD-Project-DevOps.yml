@@ -87,8 +87,10 @@ jobs:
         shell: bash
 
     steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
     - name: Configure AWS Credentials
-    - uses: mcblair/configure-aws-profile-action@v0.1.1
+      uses: mcblair/configure-aws-profile-action@v0.1.1
       with:
         role-arn: ${{ secrets.AWS_ROLE_TO_ASSUME }}
         profile-name: production
