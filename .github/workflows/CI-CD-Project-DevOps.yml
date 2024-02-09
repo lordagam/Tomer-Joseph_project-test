@@ -97,6 +97,9 @@ jobs:
         #role-external-id: ${{ secrets.AWS_ROLE_EXTERNAL_ID }}
         role-duration-seconds: 1200
         role-session-name: Terraform-jo-role
+    
+    - name: Display AWS Config
+      run: aws configure list
 
   
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
