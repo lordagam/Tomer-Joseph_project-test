@@ -105,7 +105,7 @@ jobs:
       run: git clone https://github.com/lordagam/terraform-aws-eks-work-jo.git && cd terraform-aws-eks-work-jo
 
     - name:  Test
-        run: |
+      run: |
           sudo apt-get update; cd terraform-aws-eks-work-jo && ls -alh
 
 
