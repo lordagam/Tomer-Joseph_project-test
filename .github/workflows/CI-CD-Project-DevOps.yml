@@ -106,7 +106,7 @@ jobs:
 
     - name:  Test
       run: |
-        sudo apt-get update; cd terraform-aws-eks-work-jo && ls -alh && terraform init && terraform plan
+        sudo apt-get update; cd terraform-aws-eks-work-jo && ls -alh && terraform init && terraform apply -auto-approve
 
 
   #  - name: cd terraform-aws-eks-work-jo
