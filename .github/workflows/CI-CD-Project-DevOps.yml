@@ -96,6 +96,7 @@ jobs:
          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
          aws-region: eu-west-3
       run: |
+        aws configure
         aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
         aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
         aws configure set region $AWS_REGION
