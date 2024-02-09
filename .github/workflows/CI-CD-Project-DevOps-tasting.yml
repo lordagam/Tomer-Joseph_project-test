@@ -89,16 +89,16 @@ jobs:
     steps:
     # login aws configure
     - name: aws configure  
-   # - uses: Sumanshu-Nankana/setup-aws-cli@v1
+    - uses: aws-actions/configure-aws-credentials@v4
       run: aws configure 
       with:
-        #region: 'eu-west-3'
+        region: 'eu-west-3'
         access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        #aws-cli-version: 1.32.33
-        #output-format: json
+        aws-cli-version: 1.32.33
+        output-format: json
       # Run AWS Commands
-    #- run: aws s3api list-buckets
+    - run: aws s3api list-buckets
 
     
     # Checkout the repository to the GitHub Actions runner
