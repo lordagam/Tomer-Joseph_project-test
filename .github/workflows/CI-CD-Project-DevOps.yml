@@ -104,6 +104,9 @@ jobs:
     - name: Checkout Repository
       run: git clone https://github.com/lordagam/terraform-aws-eks-work-jo.git && cd terraform-aws-eks-work-jo
 
+    - name: cd terraform-aws-eks-work-jo
+      run: cd terraform-aws-eks-work-jo
+      
     - name: show the file of dir
       run: ls -hla 
     
