@@ -128,8 +128,44 @@ jobs:
     runs-on: ubuntu-latest
     steps:
    #   - name: 'Notify users on file change'
-      - uses: danthe1st/email-filechange-notif-action@v1
+      - uses: betterfor/action-sned-mail@main
         with: 
+           # Reqired mail server address 
+         server_address: smtp.gmail.com
+           # Optional Server port, default 25 (if server_port is 465 this connection use TLS)
+         server_port: 465
+           # Optional (recommended): mail server username
+         username: ${{secrets.SENDER_EMAIL}}
+           # Optional (recommended): mail server password
+         password: ${{secrets.SMTP_PASSWORD}}
+           # Required mail subject
+         subject: Github Actions job results
+    # Required recipients address
+         to: joseph.agam92@gmail.com, 
+    # Required sender full name (address can be skipped)
+         from: alice # <joseph.agam92@gmail.com>
+    # Optional plain body
+         body: Build job of ${{github.repository}} completed successfully!
+    # Optional HTML body read from file
+        # html_body: file://README.md
+    # Optional carbon copy recipients
+        # cc: a@example.com,b@example.com
+    # Optional blind carbon copy recipients
+      #   bcc: c@example.com,d@example.com
+    # Optional recipient of the email response
+       #  reply_to: luke@example.com
+    # Optional Message ID this message is replying to
+        # in_reply_to: <random-luke@example.com>
+    # Optional converting Markdown to HTML (set content_type to text/html too)
+        # convert_mardown: true
+    # Optional attachments
+       #  attachments: README.md
+    # Optional priority: 'high', 'normal' (default) or 'low'
+         priority: low
+
+
+
+         
 #          # Address to send E-Mails from
          senderEmail: ${{ secrets.SENDER_EMAIL }}
 #          # optional, The subject of the E-Mails to send
@@ -139,7 +175,7 @@ jobs:
 #          # The SMTP server used to send E-Mails
          smtpServer: ${{ secrets.SMTP_SERVER }}
 #          # optional, The SMTP port used to send E-Mails
-         smtpPort: 587
+         smtpPort: 465
 #          # The SMTP user name used to send E-Mails
          smtpUsername: ${{ secrets.SMTP_USER }}
 #          # The SMTP password used to send E-Mails
