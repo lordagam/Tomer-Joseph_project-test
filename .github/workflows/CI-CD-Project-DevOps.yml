@@ -10,7 +10,7 @@ jobs:
       
       - name: Run curl Test
         run: |
-          sudo apt-get update; sudo apt-get install -y curl && curl http://localhost:3000 && docker ps && npm run build && sleep 30 && echo "Done sleeping" && pwd
+          sudo apt-get update; sudo apt-get install -y curl && curl http://localhost:3000 && docker ps && pwd
           
       - name: change image name
         run: |
