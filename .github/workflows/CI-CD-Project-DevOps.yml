@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
-        run: pwd && docker-compose up -d
+        run: pwd && docker-compose up --build -d 
       
       
       - name: Run curl Test
