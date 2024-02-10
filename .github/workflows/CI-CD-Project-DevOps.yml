@@ -13,10 +13,10 @@ jobs:
         run: |
           sudo apt-get update; sudo apt-get install -y curl && curl http://localhost:3000 && docker ps && sleep 30 && echo "Done sleeping" && pwd
           
-      - uses: actions/checkout@v2
+      #- uses: actions/checkout@v2
       - name: change image name
         run: |
-          sudo docker tag mariadb:10.6.4-focal  lordagam/project-devops:mariadb && docker tag tomer-joseph_project-test_backend  lordagam/project-devops:backend && tomer-joseph_project-test_frontend     lordagam/project-devops:frontend
+          sudo docker tag mariadb:10.6.4-focal  lordagam/project-devops:mariadb && docker tag tomer-joseph_project-test_backend  lordagam/project-devops:backend && tomer-joseph_project-test_frontend   lordagam/project-devops:frontend
         
       - name: Login to Docker Hub
         uses: docker/login-action@v2
