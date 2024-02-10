@@ -11,7 +11,7 @@ jobs:
       
       - name: Run curl Test
         run: |
-          sudo apt-get update; sudo apt-get install -y curl && curl http://localhost:3000 && docker ps && pwd && docker tag mariadb:10.6.4-focal  lordagam/project-devops:mariadb && docker tag tomer-joseph_project-test_backend  lordagam/project-devops:backend && tomer-joseph_project-test_frontend_1  lordagam/project-devops:frontend
+          sudo apt-get update; sudo apt-get install -y curl && curl http://localhost:3000 && docker ps && pwd && docker tag mariadb:10.6.4-focal  lordagam/project-devops:mariadb && docker tag tomer-joseph_project-test-backend  lordagam/project-devops:backend && tomer-joseph_project-test-frontend  lordagam/project-devops:frontend
 
     
       #- name: change image name
