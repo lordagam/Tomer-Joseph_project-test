@@ -123,6 +123,12 @@ jobs:
     - name: argo-ingress
       run: kubectl apply -f argo-ingress.yaml
       
+  
+ mail-Notification:
+  name: mail Notification 
+  #needs: CD-Terraform 
+  runs-on: ubuntu-latest
+  steps: 
     - uses: devellany/send-mailer@v1.0.2
       with:
         host: smtp.gmail.com
