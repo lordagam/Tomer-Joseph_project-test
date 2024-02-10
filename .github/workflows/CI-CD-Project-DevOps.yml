@@ -128,7 +128,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
    #   - name: 'Notify users on file change'
-      - uses: betterfor/action-send-mail@v0.1.1
+      - uses: betterfor/action-send-mail@v0.1.0
         with: 
            # Reqired mail server address 
          server_address: smtp.gmail.com
