@@ -123,46 +123,18 @@ jobs:
     - name: argo-ingress
       run: kubectl apply -f argo-ingress.yaml
       
- Notification-to-mail:
-    #needs: CD-Terraform 
-    runs-on: ubuntu-latest
-    steps:
-   #   - name: 'Notify users on file change'
-      - uses: betterfor/action-send-mail@v0.1.0
-        with: 
-           # Reqired mail server address 
-         server_address: smtp.gmail.com, 465
-           # Optional Server port, default 25 (if server_port is 465 this connection use TLS)
-         server_port: 465
-           # Optional (recommended): mail server username
-         username: ${{secrets.MAIL_USERNAME}}
-           # Optional (recommended): mail server password
-         password: ${{secrets.MAIL_PASSWORD}}
-           # Required mail subject
-         subject: Github Actions job results
-    # Required recipients address
-         to: joseph.agam92@gmail.com, 
-    # Required sender full name (address can be skipped)
-         from: joseph # <joseph.agam92@gmail.com>
-    # Optional plain body
-       #  body: Build job of ${{github.repository}} completed successfully!
-    # Optional HTML body read from file
-        # html_body: file://README.md
-    # Optional carbon copy recipients
-        # cc: a@example.com,b@example.com
-    # Optional blind carbon copy recipients
-      #   bcc: c@example.com,d@example.com
-    # Optional recipient of the email response
-       #  reply_to: luke@example.com
-    # Optional Message ID this message is replying to
-        # in_reply_to: <random-luke@example.com>
-    # Optional converting Markdown to HTML (set content_type to text/html too)
-        # convert_mardown: true
-    # Optional attachments
-       #  attachments: README.md
-    # Optional priority: 'high', 'normal' (default) or 'low'
-         #priority: normal
-
+    - uses: devellany/send-mailer@v1.0.2
+      with:
+        host: smtp.gmail.com
+        account: ${{ secrets.MAIL_USERNAME }}
+        password: ${{ secrets.MAIL_PASSWORD }}
+        sender: devellany
+        from: ${{secrets.MAIL_ADDRESS}}
+        to: joseph.agam92@gmail.com
+        subject: mail test.
+       #   body: file://README.md
+         # contentType: text/html
+          #attachments: file://attachmets.json
 
 
  slack-Notification:
