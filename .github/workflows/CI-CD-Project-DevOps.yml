@@ -8,15 +8,13 @@ jobs:
       - name: Build the stack
         run: pwd && docker-compose up --build -d 
       
-      
       - name: Run curl Test
         run: |
           sudo apt-get update; sudo apt-get install -y curl && curl http://localhost:3000 && docker ps && npm run build && sleep 30 && echo "Done sleeping" && pwd
           
-      #- uses: actions/checkout@v2
       - name: change image name
         run: |
-          cd /home/runner/work/Tomer-Joseph_project-test/Tomer-Joseph_project-test && docker tag mariadb:10.6.4-focal lordagam/project-devops:mariadb && docker tag tomer-joseph_project-test_frontend lordagam/project-devops:frontend && tomer-joseph_project-test_backend lordagam/project-devops:backend
+          cd /home/runner/work/Tomer-Joseph_project-test/Tomer-Joseph_project-test && docker tag mariadb:10.6.4-focal lordagam/project-devops:mariadb && docker tag tomer-joseph_project-test_frontend lordagam/project-devops:frontend && docker tag tomer-joseph_project-test_backend lordagam/project-devops:backend
         
       - name: Login to Docker Hub
         uses: docker/login-action@v2
