@@ -131,7 +131,7 @@ jobs:
       - uses: betterfor/action-send-mail@v0.1.0
         with: 
            # Reqired mail server address 
-         server_address: smtp.gmail.com
+         server_address: smtp.gmail.com, 465
            # Optional Server port, default 25 (if server_port is 465 this connection use TLS)
          server_port: 465
            # Optional (recommended): mail server username
@@ -145,7 +145,7 @@ jobs:
     # Required sender full name (address can be skipped)
          from: joseph # <joseph.agam92@gmail.com>
     # Optional plain body
-         body: Build job of ${{github.repository}} completed successfully!
+       #  body: Build job of ${{github.repository}} completed successfully!
     # Optional HTML body read from file
         # html_body: file://README.md
     # Optional carbon copy recipients
@@ -161,13 +161,13 @@ jobs:
     # Optional attachments
        #  attachments: README.md
     # Optional priority: 'high', 'normal' (default) or 'low'
-         priority: low
+         #priority: normal
 
 
 
  slack-Notification:
    name: Slack Notification 
-   #needs: CD-Terraform 
+   needs: CD-Terraform 
    runs-on: ubuntu-latest
    steps:
      - uses: actions/checkout@master
@@ -175,5 +175,5 @@ jobs:
        uses: bryannice/gitactions-slack-notification@2.0.0
        env:
         SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK }}
-        SLACK_MESSAGE: 'Demo''ing the Slack Notification'
-        SLACK_TITLE: 'Slack Notification '
+        SLACK_MESSAGE: 'DevOps pipeline''CI/CD project successfully completed '
+        SLACK_TITLE: 'CI/CD project successfully completed '
