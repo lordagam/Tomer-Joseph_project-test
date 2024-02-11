@@ -116,7 +116,7 @@ jobs:
    
     
     - name: go to dir-file 
-      run: cd /home/ec2-user/actions-runner/_work/Tomer-Joseph_project-test/Tomer-Joseph_project-test/terraform-aws-eks-work-jo
+      run: cd /home/ec2-user/actions-runner/_work/Tomer-Joseph_project-test/Tomer-Joseph_project-test/terraform-aws-eks-work-jo/terraform-aws-eks-work-jo
 
     - name: pwd
       run: pwd && ls -alh
