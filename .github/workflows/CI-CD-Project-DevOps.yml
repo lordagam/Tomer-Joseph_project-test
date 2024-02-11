@@ -103,8 +103,13 @@ jobs:
       run: pwd 
    
     - name: del old  repo 
-      run: rm -rf Tomer-Joseph_project-test && ls -alh
+      #run: rm -rf Tomer-Joseph_project-test && ls -alh
+      run: rm -rf terraform-aws-eks-work-jo && ls -alh
 
+
+   
+    
+    
     - name: clone the repo 
       #run: git clone https://github.com/lordagam/Tomer-Joseph_project-test.git && ls -alh
       run: git clone https://github.com/lordagam/terraform-aws-eks-work-jo.git && ls -alh
