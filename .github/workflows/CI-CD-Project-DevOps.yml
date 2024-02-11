@@ -112,7 +112,7 @@ jobs:
     
     - name: clone the repo 
       #run: git clone https://github.com/lordagam/Tomer-Joseph_project-test.git && ls -alh
-      run: git clone https://github.com/lordagam/terraform-aws-eks-work-jo.git && ls -alh
+      run: git clone https://github.com/lordagam/terraform-aws-eks-work-jo.git && cd /terraform-aws-eks-work-jo && ls -alh 
 
    
     
