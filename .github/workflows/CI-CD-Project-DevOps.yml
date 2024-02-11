@@ -129,11 +129,11 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: terraform init
-      run:  terraform init
+      run:  cd terraform-aws-eks-work-jo && terraform init
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: terraform validate
-      run: terraform validate
+      run: cd terraform-aws-eks-work-jo && terraform validate
 
     - name: pwd
       run: pwd && ls -alh
