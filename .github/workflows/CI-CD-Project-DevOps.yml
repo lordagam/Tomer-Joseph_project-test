@@ -101,6 +101,9 @@ jobs:
 
     - name: pwd
       run: pwd 
+   
+    - name: del old  repo 
+      run: rm -rfomer-Joseph_project-test && ls -alh
 
     - name: clone the repo 
       run: git push https://github.com/lordagam/Tomer-Joseph_project-test.git && ls -alh
