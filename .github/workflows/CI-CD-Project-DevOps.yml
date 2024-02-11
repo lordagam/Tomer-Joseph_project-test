@@ -134,6 +134,9 @@ jobs:
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: terraform validate
       run: terraform validate
+
+    - name: pwd
+      run: pwd && ls -alh
       
     # Generates an execution plan for Terraform
     - name: Terraform Plan
