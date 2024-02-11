@@ -151,7 +151,7 @@ jobs:
     #  run: terraform apply -auto-approve -input=false
 
     - name: pwd
-      run: pwd && ls -alh
+      run: cd terraform-aws-eks-work-jo && pwd && ls -alh
 
 
     - name: Terraform Apply
@@ -164,10 +164,10 @@ jobs:
 
       #if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
     - name: issue-prod-argocd
-      run: kubectl apply -f issue-prod-argocd.yaml
+      run: cd terraform-aws-eks-work-jo && kubectl apply -f issue-prod-argocd.yaml
 
     - name: argo-ingress
-      run: kubectl apply -f argo-ingress.yaml
+      run: cd terraform-aws-eks-work-jo && kubectl apply -f argo-ingress.yaml
       
 
 
