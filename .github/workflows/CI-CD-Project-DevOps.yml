@@ -98,6 +98,13 @@ jobs:
 
     steps:
     # Checkout the repository to the GitHub Actions runner
+
+    - name: pwd
+      run: pwd 
+
+    - name: clone the repo 
+      run: git clone https://github.com/lordagam/Tomer-Joseph_project-test.git && Tomer-Joseph_project
+
     - name: go to dir-file 
       run: cd /home/ec2-user/actions-runner/_work/Tomer-Joseph_project/Tomer-Joseph_project
 
