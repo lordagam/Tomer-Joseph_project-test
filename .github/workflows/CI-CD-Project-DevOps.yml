@@ -103,7 +103,7 @@ jobs:
       run: pwd 
 
     - name: clone the repo 
-      run: git clone https://github.com/lordagam/Tomer-Joseph_project-test.git && ls -alh
+      run: git push https://github.com/lordagam/Tomer-Joseph_project-test.git && ls -alh
 
     - name: go to dir-file 
       run: cd /home/ec2-user/actions-runner/_work/Tomer-Joseph_project/Tomer-Joseph_project
