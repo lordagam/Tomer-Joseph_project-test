@@ -154,6 +154,11 @@ jobs:
     - name: Terraform Apply
       run: cd terraform-aws-eks-work-jo &&terraform apply -auto-approve
 
+
+    - name: pwd
+      run: pwd && ls -alh
+
+
       #if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
     - name: issue-prod-argocd
       run: kubectl apply -f issue-prod-argocd.yaml
