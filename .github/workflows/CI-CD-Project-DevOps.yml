@@ -152,7 +152,7 @@ jobs:
 
 
     - name: Terraform Apply
-      run: terraform apply -auto-approve
+      run: cd terraform-aws-eks-work-jo &&terraform apply -auto-approve
 
       #if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
     - name: issue-prod-argocd
