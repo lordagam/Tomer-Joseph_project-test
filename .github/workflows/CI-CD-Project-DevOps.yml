@@ -116,10 +116,10 @@ jobs:
    
     
     - name: go to dir-file 
-      run: cd /home/ec2-user/actions-runner/_work/Tomer-Joseph_project-test/Tomer-Joseph_project-test/terraform-aws-eks-work-jo/terraform-aws-eks-work-jo
+      run: cd /home/ec2-user/actions-runner/_work/Tomer-Joseph_project-test/Tomer-Joseph_project-test/terraform-aws-eks-work-jo
 
     - name: pwd
-      run: pwd && ls -alh
+      run: pwd && ls -alh && cd /terraform-aws-eks-work-jo && ls -alh
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     #- name: Setup Terraform
