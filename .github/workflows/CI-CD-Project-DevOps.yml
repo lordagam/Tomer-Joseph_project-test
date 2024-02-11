@@ -87,7 +87,7 @@ jobs:
 
 
  CD-Terraform:
-    needs: Snyk-security
+    #needs: Snyk-security
     runs-on: self-hosted
     environment: production
 
@@ -103,13 +103,13 @@ jobs:
       run: pwd 
 
     - name: clone the repo 
-      run: git clone https://github.com/lordagam/Tomer-Joseph_project-test.git && Tomer-Joseph_project
+      run: git clone https://github.com/lordagam/Tomer-Joseph_project-test.git && ls -alh
 
     - name: go to dir-file 
       run: cd /home/ec2-user/actions-runner/_work/Tomer-Joseph_project/Tomer-Joseph_project
 
     - name: pwd
-      run: pwd 
+      run: pwd && ls -alh
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     #- name: Setup Terraform
