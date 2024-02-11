@@ -1,9 +1,9 @@
-name: Snyk example
-on: push
-jobs:
-  security:
-    runs-on: self-hosted
-    steps:
+#name: Snyk example
+#on: push
+#jobs:
+  #security:
+    #runs-on: self-hosted
+    #steps:
       - uses: actions/checkout@master
       - uses: snyk/actions/setup@master
       - uses: actions/setup-go@v1
