@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: zinger-portfolio
-  namespace: zinger
+  name: react-app
+  namespace: react
   annotations:
     ingress.kubernetes.io/proxy-body-size: 100M
     ingress.kubernetes.io/app-root: "/"
@@ -16,6 +16,6 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: zinger-porfolio
+            name: react-app
             port:
               number: 80
