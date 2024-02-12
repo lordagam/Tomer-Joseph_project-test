@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: react-app
+  namespace: react
+  labels:
+    app: react-app
+spec:
+  selector:
+    app: react-app
+  ports:
+    - name: http
+      port: 80
+      targetPort: 3000
