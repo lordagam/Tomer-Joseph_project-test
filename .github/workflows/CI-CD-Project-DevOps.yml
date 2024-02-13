@@ -1,7 +1,7 @@
 name: Project-DevOps
 on: 
   schedule:
-    - cron: '5 */2 * * *'  # רץ כל יום, כל שעתיים וחמישיה
+    - cron: '5 */* * * *'  # רץ כל יום, כל שעתיים וחמישיה
   push:
   
 jobs:
