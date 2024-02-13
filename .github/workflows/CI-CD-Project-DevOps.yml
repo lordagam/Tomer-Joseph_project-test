@@ -2,6 +2,8 @@ name: Project-DevOps
 on: 
   schedule:
     - cron: '5 */2 * * *'  # רץ כל יום, כל שעתיים וחמישיה
+  push:
+  
 jobs:
  CI-Build-Test-Push:
     runs-on: ubuntu-latest
