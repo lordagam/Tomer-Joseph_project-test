@@ -89,11 +89,10 @@ jobs:
         #run: docker push lordagam/project_jo_tomer:backend
         #run: docker push lordagam/project_jo_tomer:mariadb
 
-name: CD-Project-DevOps
+name: CD
 on: 
   schedule:
     - cron: '0 0 * * *'
-  push:
 jobs:
  CD-Terraform:
     #needs: Snyk-security
