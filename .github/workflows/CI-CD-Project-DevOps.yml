@@ -93,7 +93,8 @@ jobs:
  CD-Terraform:
     #needs: Snyk-security
     runs-on: self-hosted    
-     schedule:- cron: '*/5 * * * *'
+     schedule: '*/5 * * * *'
+       #- cron: '*/5 * * * *'
     environment: production
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
