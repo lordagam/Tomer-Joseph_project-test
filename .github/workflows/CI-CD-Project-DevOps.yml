@@ -89,13 +89,12 @@ jobs:
         #run: docker push lordagam/project_jo_tomer:backend
         #run: docker push lordagam/project_jo_tomer:mariadb
 
-CD-Terraform:on: 
-   schedule:
-    - cron: '*/5 * * * *'
-#jobs:
-CD-Terraform:
+   
+ CD-Terraform:
     #needs: Snyk-security
     runs-on: self-hosted    
+    schedule:
+      - cron: '*/5 * * * *'
     environment: production
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
