@@ -92,7 +92,7 @@ jobs:
 CD-Terraform:on: 
    schedule:
     - cron: '*/5 * * * *'
-   jobs:
+#jobs:
 CD-Terraform:
     #needs: Snyk-security
     runs-on: self-hosted    
