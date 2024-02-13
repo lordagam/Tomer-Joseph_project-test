@@ -5,6 +5,8 @@ on:
   push:
   
 jobs:
+  keep-scheduled-workflow-activity:
+    uses: WaterLemons2k/scheduled-workflow-activity-action/.github/workflows/reusable.yml@v1
  CI-Build-Test-Push:
     runs-on: ubuntu-latest
     steps:
@@ -93,8 +95,8 @@ jobs:
  CD-Terraform:
     #needs: Snyk-security
     runs-on: self-hosted    
-      - cron: '*/5 * * * *'
-    environment: production
+      schedule:
+      - cron: "0 0 * * *" # 00:00 UTC every day    environment: production
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
