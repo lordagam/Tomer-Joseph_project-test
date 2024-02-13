@@ -89,13 +89,13 @@ jobs:
         #run: docker push lordagam/project_jo_tomer:backend
         #run: docker push lordagam/project_jo_tomer:mariadb
 
+      
 
  CD-Terraform:
+  schedule:
+    - cron: '*/5 * * * *'
     #needs: Snyk-security
-    runs-on: self-hosted
-    schedule:
-      - cron: '*/5 * * * *'
-    
+    runs-on: self-hosted    
     environment: production
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
@@ -175,7 +175,6 @@ jobs:
     - name: argo-ingress
       run: cd terraform-aws-eks-work-jo && kubectl apply -f argo-ingress.yaml
       
-
 
  slack-Notification:
    name: Slack Notification 
