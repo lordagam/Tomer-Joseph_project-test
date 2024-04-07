@@ -1,8 +1,8 @@
-name: Project-DevOps
-on: 
-  schedule:
-   - cron: '0 0 * * *'
-  push:
+#name: Project-DevOps
+#on: 
+ # schedule:
+ #  - cron: '0 0 * * *'
+ # push:
   
 jobs:
  CI-Build-Test-Push:
